@@ -1,6 +1,7 @@
 'use strict'
 
 var React  = require('react')
+var ReactDOM = require('react-dom');
 var Region = require('region')
 var assign   = require('object-assign')
 var common = require('./utils/common')
@@ -85,7 +86,7 @@ module.exports = React.createClass(assign({
             return null
         }
 
-        var height = this.props.height || Region.fromDOM(this.getDOMNode()).getHeight()
+        var height = this.props.height || Region.fromDOM(ReactDOM.findDOMNode(this)).getHeight()
         var size   = this.props.pointerSize
 
         var pos  = Math.round(hsv.h * height / 360)

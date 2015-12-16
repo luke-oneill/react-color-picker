@@ -1,6 +1,7 @@
 'use strict'
 
 var React     = require('react')
+var ReactDOM  = require('react-dom');
 var Region    = require('region')
 var assign    = require('object-assign')
 var fromRatio = require('./utils/color').fromRatio
@@ -56,7 +57,7 @@ export default React.createClass(assign({
         var region
 
         if (!sizeDefined){
-            region = Region.fromDOM(this.getDOMNode())
+            region = Region.fromDOM(ReactDOM.findDOMNode(this))
             height = height || region.getHeight()
             width  = width  || region.getWidth()
         }
