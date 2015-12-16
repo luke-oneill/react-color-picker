@@ -21882,7 +21882,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    onMouseDown: function onMouseDown(event) {
 	        event.preventDefault();
 
-	        var region = Region.fromDOM(ReactDOM.findDOMnode(this));
+	        var region = Region.fromDOM(ReactDOM.findDOMNode(this));
 	        var info = this.getEventInfo(event, region);
 
 	        DragHelper(event, {
