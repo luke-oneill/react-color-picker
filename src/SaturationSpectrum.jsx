@@ -113,7 +113,7 @@ export default React.createClass(assign({
     },
 
     prepareStyle: function(props) {
-        var style = props.style || {}
+        var style = assign({}, props.style) || {}
 
         if (props.height){
             style.height = props.height

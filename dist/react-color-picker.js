@@ -22997,7 +22997,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 
 	    prepareStyle: function prepareStyle(props) {
-	        var style = props.style || {};
+	        var style = assign({}, props.style) || {};
 
 	        if (props.height) {
 	            style.height = props.height;
