@@ -67,7 +67,7 @@ export default React.createClass(assign({
         var size = this.props.pointerSize
         var diff = Math.floor(size/2)
 
-        if (this.props.value && this.state.mouseDown){
+        if (this.props.value && this.state.mouseDown && !isNaN(this.state.mouseDown.x)){
             x = this.state.mouseDown.x
         }
 

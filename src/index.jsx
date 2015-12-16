@@ -50,7 +50,7 @@ var RESULT = React.createClass({
     render: function(){
 
         var props    = this.prepareProps(assign({}, this.props))
-        var hueStyle = this.props.hueStyle || {}
+        var hueStyle = assign({}, this.props.hueStyle) || {}
 
         hueStyle.marginLeft = this.props.hueMargin
 

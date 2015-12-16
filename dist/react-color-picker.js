@@ -106,7 +106,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    render: function render() {
 
 	        var props = this.prepareProps(assign({}, this.props));
-	        var hueStyle = this.props.hueStyle || {};
+	        var hueStyle = assign({}, this.props.hueStyle) || {};
 
 	        hueStyle.marginLeft = this.props.hueMargin;
 
@@ -22951,7 +22951,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var size = this.props.pointerSize;
 	        var diff = Math.floor(size / 2);
 
-	        if (this.props.value && this.state.mouseDown) {
+	        if (this.props.value && this.state.mouseDown && !isNaN(this.state.mouseDown.x)) {
 	            x = this.state.mouseDown.x;
 	        }
 
