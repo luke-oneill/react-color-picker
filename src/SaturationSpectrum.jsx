@@ -1,6 +1,7 @@
 'use strict'
 
 var React     = require('react')
+var ReactDOM  = require('react-dom');
 var Region    = require('region')
 var assign    = require('object-assign')
 var fromRatio = require('./utils/color').fromRatio
@@ -56,7 +57,7 @@ export default React.createClass(assign({
         var region
 
         if (!sizeDefined){
-            region = Region.fromDOM(this.getDOMNode())
+            region = Region.fromDOM(ReactDOM.findDOMNode(this))
             height = height || region.getHeight()
             width  = width  || region.getWidth()
         }
@@ -66,7 +67,7 @@ export default React.createClass(assign({
         var size = this.props.pointerSize
         var diff = Math.floor(size/2)
 
-        if (this.props.value && this.state.mouseDown){
+        if (this.props.value && this.state.mouseDown && !isNaN(this.state.mouseDown.x)){
             x = this.state.mouseDown.x
         }
 
@@ -112,7 +113,7 @@ export default React.createClass(assign({
     },
 
     prepareStyle: function(props) {
-        var style = props.style || {}
+        var style = assign({}, props.style) || {}
 
         if (props.height){
             style.height = props.height

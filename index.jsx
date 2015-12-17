@@ -3,6 +3,7 @@
 require('./style/index.styl')
 
 var React       = require('react')
+var ReactDOM    = require('react-dom')
 var ColorPicker = require('./src')
 
 var COLOR = '#F28281'
@@ -35,5 +36,5 @@ var App = React.createClass({
 })
 
 
-React.render(<App />, document.getElementById('content'))
+ReactDOM.render(<App />, document.getElementById('content'))
 

@@ -1,5 +1,6 @@
 'use strict';
 
+var ReactDOM   = require('react-dom');
 var Region     = require('region')
 var assign     = require('object-assign')
 var DragHelper = require('drag-helper')
@@ -25,7 +26,7 @@ export default {
     onMouseDown: function(event){
         event.preventDefault()
 
-        var region = Region.fromDOM(this.getDOMNode())
+        var region = Region.fromDOM(ReactDOM.findDOMNode(this))
         var info   = this.getEventInfo(event, region)
 
         DragHelper(event, {
@@ -134,7 +135,7 @@ export default {
     },
 
     getEventInfo: function(event, region){
-        region = region || Region.fromDOM(this.getDOMNode())
+        region = region || Region.fromDOM(ReactDOM.findDOMNode(this))
 
         var x = event.clientX - region.left
         var y = event.clientY - region.top
