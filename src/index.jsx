@@ -4,7 +4,7 @@ var React      = require('react')
 var assign     = require('object-assign')
 var colorUtils = require('./utils/color')
 
-var HueSpectrum        = require('./HueSpectrum')
+var HueSpectrum = require('./HueSpectrum')
 var SaturationSpectrum = require('./SaturationSpectrum')
 
 var toHsv = colorUtils.toHsv
@@ -17,12 +17,12 @@ var RESULT = React.createClass({
 
     getDefaultProps: function(){
         return {
-            defaultColor    : require('./defaultColor'),
+            defaultColor : require('./defaultColor'),
             saturationWidth : 300,
             saturationHeight: 300,
-            hueHeight       : null,
-            hueWidth        : 30,
-            hueMargin       : 10
+            hueHeight : null,
+            hueWidth : 30,
+            hueMargin : 10
         }
     },
 

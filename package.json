@@ -1,6 +1,6 @@
 {
   "name": "react-color-picker",
-  "version": "2.1.9",
+  "version": "3.0.0",
   "description": "React Color Picker",
   "main": "lib/index.js",
   "scripts": {
@@ -23,12 +23,12 @@
   ],
   "dependencies": {
     "drag-helper": "^1.2.3",
-    "normalize.css": "^3.0.2",
-    "object-assign": "^2.0.0",
+    "object-assign": "^4.0.1",
     "region": "^2.1.2",
     "tinycolor2": "^1.1.1"
   },
   "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
     "babel-core": "^5.4.3",
     "babel-loader": "^5.1.2",
     "css-loader": "~0.9.0",

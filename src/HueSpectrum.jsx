@@ -71,9 +71,9 @@ module.exports = React.createClass(assign({
             dragStyle.display = 'block'
         }
         return (
-            <div className='cp-hue-spectrum' style={style} onMouseDown={this.onMouseDown}>
-                <div className="cp-hue-drag" style={dragStyle}>
-                    <div className="inner" />
+            <div className='react-color-picker--hue-spectrum' style={style} onMouseDown={this.onMouseDown}>
+                <div className="react-color-picker--hue-drag" style={dragStyle}>
+                    <div className="react-color-picker--hue-inner" />
                 </div>
             </div>
         )

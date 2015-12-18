@@ -16,11 +16,9 @@ No images have been used in the making of this color picker :)
 $ npm install react-color-picker
 ```
 
-#### Bower
+## Changelog
 
-```sh
-bower install react-color-picker
-```
+See [changelog](./CHANGELOG.md)
 
 #### Other
 
@@ -145,7 +143,7 @@ $ npm install
 $ npm dev
 ```
 
-Now navigate to [localhost:9090](http://localhost:9090/)
+Now navigate to [localhost:8090](http://localhost:8090/)
 
 Before building a new version, make sure you run
 
