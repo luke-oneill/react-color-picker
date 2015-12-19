@@ -19,7 +19,6 @@ var App = React.createClass({
     	return <div style={{margin: 30}}>
         	<h1>This works correctly</h1>
             <ColorPicker
-                saturationWidth={100}
                 defaultValue={ COLOR }
                 onDrag={ this.onDrag }
             />

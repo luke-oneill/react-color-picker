@@ -107,7 +107,7 @@ export default React.createClass(assign({
     prepareClassName: function(props) {
         var className = props.className || ''
 
-        className += ' react-color-picker--saturation-spectrum'
+        className += ' react-color-picker__saturation-spectrum'
 
         return className
     },
@@ -146,11 +146,11 @@ export default React.createClass(assign({
 
         return (
             <div className={props.className} style={props.style} onMouseDown={this.onMouseDown}>
-                <div className='react-color-picker--saturation-white'>
-                    <div className='react-color-picker--saturation-black' />
+                <div className='react-color-picker__saturation-white'>
+                    <div className='react-color-picker__saturation-black' />
                 </div>
-                <div className="react-color-picker--saturation-drag" style={dragStyle}>
-                    <div className="react-color-picker--saturation-inner" />
+                <div className="react-color-picker__saturation-drag" style={dragStyle}>
+                    <div className="react-color-picker__saturation-inner" />
                 </div>
             </div>
         )

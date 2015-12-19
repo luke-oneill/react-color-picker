@@ -1,6 +1,9 @@
 react-color-picker
 =================
 
+### 3.1.0
+
+ * rename css classes from `react-color-picker--*` to `react-color-picker__*`
 
 ### 3.0.0
 

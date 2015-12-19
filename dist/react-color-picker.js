@@ -61,7 +61,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var colorUtils = __webpack_require__(3);
 
 	var HueSpectrum = __webpack_require__(5);
-	var SaturationSpectrum = __webpack_require__(173);
+	var SaturationSpectrum = __webpack_require__(175);
 
 	var toHsv = colorUtils.toHsv;
 
@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    getDefaultProps: function getDefaultProps() {
 	        return {
-	            defaultColor: __webpack_require__(171),
+	            defaultColor: __webpack_require__(173),
 	            saturationWidth: 300,
 	            saturationHeight: 300,
 	            hueHeight: null,
@@ -157,7 +157,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return typeof value == 'string' ? toHsv(value) : value;
 	    },
 
-	    toStringValue: __webpack_require__(172),
+	    toStringValue: __webpack_require__(174),
 
 	    handleChange: function handleChange(color) {
 
@@ -1495,9 +1495,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	var ReactDOM = __webpack_require__(6);
 	var Region = __webpack_require__(152);
 	var assign = __webpack_require__(2);
-	var common = __webpack_require__(161);
+	var common = __webpack_require__(162);
 
-	var VALIDATE = __webpack_require__(170);
+	var VALIDATE = __webpack_require__(172);
 
 	module.exports = React.createClass(assign({
 
@@ -1508,7 +1508,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            height: 300,
 	            width: 30,
 	            pointerSize: 3,
-	            defaultColor: __webpack_require__(171)
+	            defaultColor: __webpack_require__(173)
 	        };
 	    },
 
@@ -1563,11 +1563,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return React.createElement(
 	            'div',
-	            { className: 'react-color-picker--hue-spectrum', style: style, onMouseDown: this.onMouseDown },
+	            { className: 'react-color-picker__hue-spectrum', style: style, onMouseDown: this.onMouseDown },
 	            React.createElement(
 	                'div',
-	                { className: 'react-color-picker--hue-drag', style: dragStyle },
-	                React.createElement('div', { className: 'react-color-picker--hue-inner' })
+	                { className: 'react-color-picker__hue-drag', style: dragStyle },
+	                React.createElement('div', { className: 'react-color-picker__hue-inner' })
 	            )
 	        );
 	    },
@@ -1600,7 +1600,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.state.h = this.hsv.h != 0 ? this.hsv.h : 0;
 	    },
 
-	    toStringValue: __webpack_require__(172)
+	    toStringValue: __webpack_require__(174)
 	}, common));
 
 /***/ },
@@ -20212,11 +20212,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hasOwn    = __webpack_require__(154)
 	var newify    = __webpack_require__(155)
 
-	var assign      = __webpack_require__(2);
-	var EventEmitter = __webpack_require__(157).EventEmitter
+	var assign      = __webpack_require__(157);
+	var EventEmitter = __webpack_require__(158).EventEmitter
 
-	var inherits = __webpack_require__(158)
-	var VALIDATE = __webpack_require__(159)
+	var inherits = __webpack_require__(159)
+	var VALIDATE = __webpack_require__(160)
 
 	var objectToString = Object.prototype.toString
 
@@ -21255,7 +21255,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	})
 
-	__webpack_require__(160)(REGION)
+	__webpack_require__(161)(REGION)
 
 	module.exports = REGION
 
@@ -21347,6 +21347,38 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 157 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	function ToObject(val) {
+		if (val == null) {
+			throw new TypeError('Object.assign cannot be called with null or undefined');
+		}
+
+		return Object(val);
+	}
+
+	module.exports = Object.assign || function (target, source) {
+		var from;
+		var keys;
+		var to = ToObject(target);
+
+		for (var s = 1; s < arguments.length; s++) {
+			from = arguments[s];
+			keys = Object.keys(Object(from));
+
+			for (var i = 0; i < keys.length; i++) {
+				to[keys[i]] = from[keys[i]];
+			}
+		}
+
+		return to;
+	};
+
+
+/***/ },
+/* 158 */
 /***/ function(module, exports) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -21650,7 +21682,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21668,7 +21700,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21700,13 +21732,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var hasOwn   = __webpack_require__(154)
-	var VALIDATE = __webpack_require__(159)
+	var VALIDATE = __webpack_require__(160)
 
 	module.exports = function(REGION){
 
@@ -21919,7 +21951,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21930,7 +21962,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var ReactDOM = __webpack_require__(6);
 	var Region = __webpack_require__(152);
 	var assign = __webpack_require__(2);
-	var DragHelper = __webpack_require__(162);
+	var DragHelper = __webpack_require__(163);
 	var toHsv = __webpack_require__(3).toHsv;
 
 	function emptyFn() {}
@@ -22072,15 +22104,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assign = __webpack_require__(2)
-	var Region = __webpack_require__(163)
-	var hasTouch = __webpack_require__(168)
-	var once   = __webpack_require__(169)
+	var assign = __webpack_require__(164)
+	var Region = __webpack_require__(165)
+	var hasTouch = __webpack_require__(170)
+	var once   = __webpack_require__(171)
 
 	var Helper = function(config){
 	    this.config = config
@@ -22273,17 +22305,49 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 163 */
+/* 164 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	function ToObject(val) {
+		if (val == null) {
+			throw new TypeError('Object.assign cannot be called with null or undefined');
+		}
+
+		return Object(val);
+	}
+
+	module.exports = Object.assign || function (target, source) {
+		var from;
+		var keys;
+		var to = ToObject(target);
+
+		for (var s = 1; s < arguments.length; s++) {
+			from = arguments[s];
+			keys = Object.keys(Object(from));
+
+			for (var i = 0; i < keys.length; i++) {
+				to[keys[i]] = from[keys[i]];
+			}
+		}
+
+		return to;
+	};
+
+
+/***/ },
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var Region = __webpack_require__(152)
 
-	__webpack_require__(164)
-	__webpack_require__(165)
+	__webpack_require__(166)
+	__webpack_require__(167)
 
-	var COMPUTE_ALIGN_REGION = __webpack_require__(166)
+	var COMPUTE_ALIGN_REGION = __webpack_require__(168)
 
 	/**
 	 * region-align module exposes methods for aligning {@link Element} and {@link Region} instances
@@ -22459,7 +22523,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = Region
 
 /***/ },
-/* 164 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
@@ -22580,7 +22644,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 165 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22622,12 +22686,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 166 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
 
-	var ALIGN_TO_NORMALIZED = __webpack_require__(167)
+	var ALIGN_TO_NORMALIZED = __webpack_require__(169)
 
 	var Region = __webpack_require__(152)
 
@@ -22703,7 +22767,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = COMPUTE_ALIGN_REGION
 
 /***/ },
-/* 167 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
@@ -22885,14 +22949,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = ALIGN_TO_NORMALIZED
 
 /***/ },
-/* 168 */
+/* 170 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = 'ontouchstart' in global || (global.DocumentTouch && document instanceof DocumentTouch)
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 169 */
+/* 171 */
 /***/ function(module, exports) {
 
 	'use once'
@@ -22914,7 +22978,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 170 */
+/* 172 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -22943,7 +23007,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 171 */
+/* 173 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -22951,7 +23015,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = 'red';
 
 /***/ },
-/* 172 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22966,7 +23030,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 173 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22979,9 +23043,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Region = __webpack_require__(152);
 	var assign = __webpack_require__(2);
 	var fromRatio = __webpack_require__(3).fromRatio;
-	var common = __webpack_require__(161);
+	var common = __webpack_require__(162);
 
-	var VALIDATE = __webpack_require__(170);
+	var VALIDATE = __webpack_require__(172);
 
 	exports['default'] = React.createClass(assign({
 
@@ -22992,7 +23056,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            height: 300,
 	            width: 300,
 	            pointerSize: 7,
-	            defaultColor: __webpack_require__(171)
+	            defaultColor: __webpack_require__(173)
 	        };
 	    },
 
@@ -23081,7 +23145,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    prepareClassName: function prepareClassName(props) {
 	        var className = props.className || '';
 
-	        className += ' react-color-picker--saturation-spectrum';
+	        className += ' react-color-picker__saturation-spectrum';
 
 	        return className;
 	    },
@@ -23123,13 +23187,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	            { className: props.className, style: props.style, onMouseDown: this.onMouseDown },
 	            React.createElement(
 	                'div',
-	                { className: 'react-color-picker--saturation-white' },
-	                React.createElement('div', { className: 'react-color-picker--saturation-black' })
+	                { className: 'react-color-picker__saturation-white' },
+	                React.createElement('div', { className: 'react-color-picker__saturation-black' })
 	            ),
 	            React.createElement(
 	                'div',
-	                { className: 'react-color-picker--saturation-drag', style: dragStyle },
-	                React.createElement('div', { className: 'react-color-picker--saturation-inner' })
+	                { className: 'react-color-picker__saturation-drag', style: dragStyle },
+	                React.createElement('div', { className: 'react-color-picker__saturation-inner' })
 	            )
 	        );
 	    },
@@ -23149,7 +23213,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.hsv.v = this.getColorValueForPoint(point);
 	    },
 
-	    toStringValue: __webpack_require__(172)
+	    toStringValue: __webpack_require__(174)
 	}, common));
 	module.exports = exports['default'];
 
