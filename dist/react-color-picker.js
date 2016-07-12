@@ -132,6 +132,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            style: hueStyle
 	        };
 
+	        var divConfig = {
+	            className: props.className,
+	            defaultValue: props.defaultValue,
+	            onDrag: props.onDrag
+	        };
+
 	        if (this.state.dragHue) {
 	            ;(value || defaultValue).h = this.state.dragHue;
 	        }
@@ -147,7 +153,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        return React.createElement(
 	            'div',
-	            props,
+	            divConfig,
 	            React.createElement(SaturationSpectrum, saturationConfig),
 	            React.createElement(HueSpectrum, hueConfig)
 	        );
