@@ -81,6 +81,12 @@ var RESULT = React.createClass({
             style      : hueStyle
         }
 
+        var divConfig = {
+            className   : props.className,
+            defaultValue: props.defaultValue,
+            onDrag      : props.onDrag
+        }
+
         if (this.state.dragHue){
             ;(value || defaultValue).h = this.state.dragHue
         }
@@ -94,7 +100,7 @@ var RESULT = React.createClass({
             hueConfig.defaultValue        = assign({}, defaultValue)
         }
 
-        return <div {...props}>
+        return <div {...divConfig}>
             <SaturationSpectrum {...saturationConfig} />
             <HueSpectrum {...hueConfig} />
         </div>
